@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  #side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #side-menu li {
+    margin: 20px 0;
+  }
+  
+  #side-menu a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+    </style>
+</head>
+<body>
+    <button id="menu-btn">Menu</button>
+    <div id="side-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <script>
+
+const menuBtn = document.getElementById("menu-btn");
+const sideMenu = document.getElementById("side-menu");
+
+menuBtn.addEventListener("click", function() {
+  sideMenu.style.left = "0";
+});
+
+sideMenu.addEventListener("click", function(e) {
+  if (e.target.tagName === "A") {
+    sideMenu.style.left = "-250px";
+  }
+});
+
+
+
+    </script>
+</body>
+</html>
